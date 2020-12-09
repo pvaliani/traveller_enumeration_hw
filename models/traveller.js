@@ -21,12 +21,17 @@ Traveller.prototype.getJourneyEndLocations = function () {
 
 Traveller.prototype.getJourneysByTransport = function (transport) {
 
+  // filter method states on rhs that for each iteration of a "journey" journey.transport object equals the input of "transport" in the function method  input on line 22
+
   const journeyByTransport = this.journeys.filter(journey => journey.transport === transport);
   return journeyByTransport;
 
 };
 
 Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
+
+  const journeyByMinDistance = this.journeys.filter(journey => journey.distance >= minDistance);
+  return journeyByMinDistance;
 
 };
 
