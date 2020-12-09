@@ -4,6 +4,12 @@ const Traveller = function(journeys) {
 
 Traveller.prototype.getJourneyStartLocations = function() {
 
+  // create a variable to store the anonymous function 
+  // maps each journey start location object property in the array to a new array. Returns the variable i.e array storing this info as startLocations
+
+  const startLocations = this.journeys.map(journey => journey.startLocation);
+  return startLocations;
+
 };
 
 Traveller.prototype.getJourneyEndLocations = function () {
