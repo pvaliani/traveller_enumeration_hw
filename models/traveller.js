@@ -39,6 +39,8 @@ Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
 
 Traveller.prototype.calculateTotalDistanceTravelled = function () {
 
+  // apply a reduce to the journey list and accumulate each journey.distance object starting from 0 to provide the total distance. Journeys is a journey object containing a distance attribute. Each traveller has multiple journeys.
+
   const totalDistance = this.journeys.reduce((acc, journey) => acc + journey.distance, 0);
   return totalDistance;
   
@@ -46,6 +48,9 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
+
+  const uniqueModes = [...new Set(this.journeys.map(journey => journey.transport))];
+  return uniqueModes
 
 };
 
