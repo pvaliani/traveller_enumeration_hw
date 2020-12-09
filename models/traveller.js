@@ -30,6 +30,8 @@ Traveller.prototype.getJourneysByTransport = function (transport) {
 
 Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
 
+  // filters each journey iteration by its journey.distance object property and returns where this object property is greater than or equal to the minDistance provided
+
   const journeyByMinDistance = this.journeys.filter(journey => journey.distance >= minDistance);
   return journeyByMinDistance;
 
